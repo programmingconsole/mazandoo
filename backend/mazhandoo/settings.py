@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'mazhandoo.wsgi.application'
 
 # Database
 # Parses DATABASE_URL or defaults to postgis sqlite equivalent (spatialite) or standard postgis
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgis://postgres:postgrespassword@db:5432/mazhandoo')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgis://mazhandoo_user:mazhandoo_password@db:5432/mazhandoo')
 
 DATABASES = {
     'default': dj_database_url.config(

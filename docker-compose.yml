@@ -6,8 +6,8 @@ services:
     container_name: mazhandoo_db
     environment:
       POSTGRES_DB: mazhandoo
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_USER: mazhandoo_user
+      POSTGRES_PASSWORD: mazhandoo_password
     ports:
       - "5432:5432"
     volumes:
@@ -31,7 +31,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgis://postgres:postgrespassword@db:5432/mazhandoo
+      - DATABASE_URL=postgis://mazhandoo_user:mazhandoo_password@db:5432/mazhandoo
       - SECRET_KEY=django-insecure-mazhandoo-secret-key-12345
       - DEBUG=True
       - ALLOWED_HOSTS=*
