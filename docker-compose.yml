@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: mazhandoo_user
       POSTGRES_PASSWORD: mazhandoo_password
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -55,7 +55,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost/api
     depends_on:
